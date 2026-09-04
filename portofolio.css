@@ -503,6 +503,15 @@ img {
  
  
 /* ================================================== 
+   FOTO MOBILE
+================================================== */ 
+ 
+.mobile-about-photo { 
+    display: none; 
+} 
+ 
+ 
+/* ================================================== 
    ANIMASI GERAK ABOUT 
 ================================================== */ 
  
@@ -1141,39 +1150,74 @@ a:active {
         font-size: 12px; 
         padding: 8px 12px; 
     } 
- 
+
+
     /* ==================================================
-       ABOUT - TULISAN DI ATAS, FOTO DI BAWAH
-    ================================================== */ 
- 
-    .about-container { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 40px; 
-    } 
- 
-    .about-content { 
-        order: 1; 
-        width: 100%; 
-        text-align: center; 
-    } 
- 
-    .about-photo { 
-        order: 2; 
-        width: 100%; 
-        max-width: 350px; 
-        margin: 0 auto; 
-    } 
- 
-    /* Ukuran foto About di HP */ 
- 
-    .about-photo img { 
-        height: 350px; 
-    } 
- 
-    /* Animasi About lebih kecil di HP */ 
- 
-    .about-photo:hover { 
-        transform: translateY(-7px) scale(1.01); 
-    } 
+       ABOUT HP
+       URUTAN:
+       TENTANG SAYA
+       ↓
+       FOTO
+       ↓
+       JUDUL
+       ↓
+       DESKRIPSI
+       ↓
+       INFO
+    ================================================== */
+
+    .about-container {
+        display: block;
+        width: 90%;
+    }
+
+    .about-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Foto yang berada di dalam content
+       ditampilkan pada HP */
+
+    .mobile-about-photo {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 15px auto 30px;
+    }
+
+    .mobile-about-photo img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    /* Foto versi desktop disembunyikan pada HP */
+
+    .desktop-about-photo {
+        display: none;
+    }
+
+    /* Judul setelah foto */
+
+    .about-content h2 {
+        font-size: 30px;
+        margin: 10px 0 20px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    /* Info tetap di bawah tulisan */
+
+    .about-info {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .about-photo:hover {
+        transform: translateY(-7px) scale(1.01);
+    }
 }
